@@ -1,0 +1,408 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0443071B14DC66580049B92E /* libMapView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0443071514DC65D60049B92E /* libMapView.a */; };
+		0443072014DC6B1E0049B92E /* mapbox.geography-class.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0443071F14DC6B1E0049B92E /* mapbox.geography-class.plist */; };
+		0443074514DCBA040049B92E /* geography-class.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0443074414DCBA040049B92E /* geography-class.plist */; };
+		0443074714DCBA140049B92E /* electoraldistricts.mbtiles in Resources */ = {isa = PBXBuildFile; fileRef = 0443074614DCBA130049B92E /* electoraldistricts.mbtiles */; };
+		0443FEEE14DC5E390049B92E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0443FEED14DC5E390049B92E /* UIKit.framework */; };
+		0443FEF014DC5E390049B92E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0443FEEF14DC5E390049B92E /* Foundation.framework */; };
+		0443FEF214DC5E390049B92E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0443FEF114DC5E390049B92E /* CoreGraphics.framework */; };
+		0443FEF814DC5E390049B92E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0443FEF614DC5E390049B92E /* InfoPlist.strings */; };
+		0443FEFA14DC5E390049B92E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0443FEF914DC5E390049B92E /* main.m */; };
+		0443FEFE14DC5E390049B92E /* IslandMapAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0443FEFD14DC5E390049B92E /* IslandMapAppDelegate.m */; };
+		0443FF0114DC5E390049B92E /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0443FEFF14DC5E390049B92E /* MainStoryboard.storyboard */; };
+		0443FF0414DC5E390049B92E /* IslandMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0443FF0314DC5E390049B92E /* IslandMapViewController.m */; };
+		0443FF0B14DC5E890049B92E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0443FF0A14DC5E890049B92E /* AVFoundation.framework */; };
+		0443FF0D14DC5E920049B92E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0443FF0C14DC5E920049B92E /* CoreLocation.framework */; };
+		0443FF0F14DC5E9B0049B92E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0443FF0E14DC5E9B0049B92E /* QuartzCore.framework */; };
+		0443FF1114DC5EB80049B92E /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0443FF1014DC5EB80049B92E /* libsqlite3.dylib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0443071414DC65D60049B92E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0443070514DC65D50049B92E /* MapView.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 17F31EFA1331050A00122B16;
+			remoteInfo = MapView;
+		};
+		0443071614DC65D60049B92E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0443070514DC65D50049B92E /* MapView.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2BF3078F0F8AC5C0007014EE;
+			remoteInfo = "Unit Tests";
+		};
+		0443071914DC661B0049B92E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0443070514DC65D50049B92E /* MapView.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = B8C974130E8A19B2007D16AD;
+			remoteInfo = MapView;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0443070514DC65D50049B92E /* MapView.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MapView.xcodeproj; path = "Externals/alpstein-route-me/MapView/MapView.xcodeproj"; sourceTree = "<group>"; };
+		0443071F14DC6B1E0049B92E /* mapbox.geography-class.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "mapbox.geography-class.plist"; sourceTree = "<group>"; };
+		0443074414DCBA040049B92E /* geography-class.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "geography-class.plist"; sourceTree = "<group>"; };
+		0443074614DCBA130049B92E /* electoraldistricts.mbtiles */ = {isa = PBXFileReference; lastKnownFileType = file; path = electoraldistricts.mbtiles; sourceTree = "<group>"; };
+		0443FEE914DC5E390049B92E /* IslandMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IslandMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0443FEED14DC5E390049B92E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		0443FEEF14DC5E390049B92E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		0443FEF114DC5E390049B92E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		0443FEF514DC5E390049B92E /* IslandMap-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IslandMap-Info.plist"; sourceTree = "<group>"; };
+		0443FEF714DC5E390049B92E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0443FEF914DC5E390049B92E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0443FEFB14DC5E390049B92E /* IslandMap-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IslandMap-Prefix.pch"; sourceTree = "<group>"; };
+		0443FEFC14DC5E390049B92E /* IslandMapAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IslandMapAppDelegate.h; sourceTree = "<group>"; };
+		0443FEFD14DC5E390049B92E /* IslandMapAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IslandMapAppDelegate.m; sourceTree = "<group>"; };
+		0443FF0014DC5E390049B92E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		0443FF0214DC5E390049B92E /* IslandMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IslandMapViewController.h; sourceTree = "<group>"; };
+		0443FF0314DC5E390049B92E /* IslandMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IslandMapViewController.m; sourceTree = "<group>"; };
+		0443FF0A14DC5E890049B92E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		0443FF0C14DC5E920049B92E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		0443FF0E14DC5E9B0049B92E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		0443FF1014DC5EB80049B92E /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0443FEE614DC5E390049B92E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0443071B14DC66580049B92E /* libMapView.a in Frameworks */,
+				0443FF1114DC5EB80049B92E /* libsqlite3.dylib in Frameworks */,
+				0443FF0F14DC5E9B0049B92E /* QuartzCore.framework in Frameworks */,
+				0443FF0D14DC5E920049B92E /* CoreLocation.framework in Frameworks */,
+				0443FF0B14DC5E890049B92E /* AVFoundation.framework in Frameworks */,
+				0443FEF214DC5E390049B92E /* CoreGraphics.framework in Frameworks */,
+				0443FEEE14DC5E390049B92E /* UIKit.framework in Frameworks */,
+				0443FEF014DC5E390049B92E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0443032714DC653C0049B92E /* Externals */ = {
+			isa = PBXGroup;
+			children = (
+				0443072114DC739C0049B92E /* alpstein-route-me */,
+			);
+			name = Externals;
+			sourceTree = "<group>";
+		};
+		0443070614DC65D50049B92E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0443071514DC65D60049B92E /* libMapView.a */,
+				0443071714DC65D60049B92E /* RM Unit Tests.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0443071C14DC6A620049B92E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0443074614DCBA130049B92E /* electoraldistricts.mbtiles */,
+				0443074414DCBA040049B92E /* geography-class.plist */,
+				0443071F14DC6B1E0049B92E /* mapbox.geography-class.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		0443072114DC739C0049B92E /* alpstein-route-me */ = {
+			isa = PBXGroup;
+			children = (
+				0443070514DC65D50049B92E /* MapView.xcodeproj */,
+			);
+			name = "alpstein-route-me";
+			sourceTree = "<group>";
+		};
+		0443FEDE14DC5E390049B92E = {
+			isa = PBXGroup;
+			children = (
+				0443071C14DC6A620049B92E /* Resources */,
+				0443032714DC653C0049B92E /* Externals */,
+				0443FEF314DC5E390049B92E /* IslandMap */,
+				0443FEEC14DC5E390049B92E /* Frameworks */,
+				0443FEEA14DC5E390049B92E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0443FEEA14DC5E390049B92E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0443FEE914DC5E390049B92E /* IslandMap.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0443FEEC14DC5E390049B92E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0443FF1014DC5EB80049B92E /* libsqlite3.dylib */,
+				0443FF0E14DC5E9B0049B92E /* QuartzCore.framework */,
+				0443FF0C14DC5E920049B92E /* CoreLocation.framework */,
+				0443FF0A14DC5E890049B92E /* AVFoundation.framework */,
+				0443FEED14DC5E390049B92E /* UIKit.framework */,
+				0443FEEF14DC5E390049B92E /* Foundation.framework */,
+				0443FEF114DC5E390049B92E /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0443FEF314DC5E390049B92E /* IslandMap */ = {
+			isa = PBXGroup;
+			children = (
+				0443FEFC14DC5E390049B92E /* IslandMapAppDelegate.h */,
+				0443FEFD14DC5E390049B92E /* IslandMapAppDelegate.m */,
+				0443FEFF14DC5E390049B92E /* MainStoryboard.storyboard */,
+				0443FF0214DC5E390049B92E /* IslandMapViewController.h */,
+				0443FF0314DC5E390049B92E /* IslandMapViewController.m */,
+				0443FEF414DC5E390049B92E /* Supporting Files */,
+			);
+			path = IslandMap;
+			sourceTree = "<group>";
+		};
+		0443FEF414DC5E390049B92E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0443FEF514DC5E390049B92E /* IslandMap-Info.plist */,
+				0443FEF614DC5E390049B92E /* InfoPlist.strings */,
+				0443FEF914DC5E390049B92E /* main.m */,
+				0443FEFB14DC5E390049B92E /* IslandMap-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0443FEE814DC5E390049B92E /* IslandMap */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0443FF0714DC5E390049B92E /* Build configuration list for PBXNativeTarget "IslandMap" */;
+			buildPhases = (
+				0443FEE514DC5E390049B92E /* Sources */,
+				0443FEE614DC5E390049B92E /* Frameworks */,
+				0443FEE714DC5E390049B92E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0443071A14DC661B0049B92E /* PBXTargetDependency */,
+			);
+			name = IslandMap;
+			productName = IslandMap;
+			productReference = 0443FEE914DC5E390049B92E /* IslandMap.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0443FEE014DC5E390049B92E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 0443FEE314DC5E390049B92E /* Build configuration list for PBXProject "IslandMap" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 0443FEDE14DC5E390049B92E;
+			productRefGroup = 0443FEEA14DC5E390049B92E /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 0443070614DC65D50049B92E /* Products */;
+					ProjectRef = 0443070514DC65D50049B92E /* MapView.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				0443FEE814DC5E390049B92E /* IslandMap */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		0443071514DC65D60049B92E /* libMapView.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libMapView.a;
+			remoteRef = 0443071414DC65D60049B92E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0443071714DC65D60049B92E /* RM Unit Tests.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "RM Unit Tests.app";
+			remoteRef = 0443071614DC65D60049B92E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0443FEE714DC5E390049B92E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0443FEF814DC5E390049B92E /* InfoPlist.strings in Resources */,
+				0443FF0114DC5E390049B92E /* MainStoryboard.storyboard in Resources */,
+				0443072014DC6B1E0049B92E /* mapbox.geography-class.plist in Resources */,
+				0443074514DCBA040049B92E /* geography-class.plist in Resources */,
+				0443074714DCBA140049B92E /* electoraldistricts.mbtiles in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0443FEE514DC5E390049B92E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0443FEFA14DC5E390049B92E /* main.m in Sources */,
+				0443FEFE14DC5E390049B92E /* IslandMapAppDelegate.m in Sources */,
+				0443FF0414DC5E390049B92E /* IslandMapViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0443071A14DC661B0049B92E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MapView;
+			targetProxy = 0443071914DC661B0049B92E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0443FEF614DC5E390049B92E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0443FEF714DC5E390049B92E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		0443FEFF14DC5E390049B92E /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0443FF0014DC5E390049B92E /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0443FF0514DC5E390049B92E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		0443FF0614DC5E390049B92E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0443FF0814DC5E390049B92E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IslandMap/IslandMap-Prefix.pch";
+				"HEADER_SEARCH_PATHS[arch=*]" = "\"$(SRCROOT)/Externals/alpstein-route-me/MapView/Map/**";
+				INFOPLIST_FILE = "IslandMap/IslandMap-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		0443FF0914DC5E390049B92E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IslandMap/IslandMap-Prefix.pch";
+				"HEADER_SEARCH_PATHS[arch=*]" = "\"$(SRCROOT)/Externals/alpstein-route-me/MapView/Map/**";
+				INFOPLIST_FILE = "IslandMap/IslandMap-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0443FEE314DC5E390049B92E /* Build configuration list for PBXProject "IslandMap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0443FF0514DC5E390049B92E /* Debug */,
+				0443FF0614DC5E390049B92E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0443FF0714DC5E390049B92E /* Build configuration list for PBXNativeTarget "IslandMap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0443FF0814DC5E390049B92E /* Debug */,
+				0443FF0914DC5E390049B92E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0443FEE014DC5E390049B92E /* Project object */;
+}

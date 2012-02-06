@@ -8,12 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@class RMMapView;
+#import "RMMapView.h"
 
-@interface IslandMapViewController : UIViewController
-{
-	RMMapView *mapView;
-}
+@interface IslandMapViewController : UIViewController <RMMapViewDelegate>
 
 @property(nonatomic,strong)RMMapView *mapView;
 

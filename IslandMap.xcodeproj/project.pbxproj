@@ -23,6 +23,7 @@
 		0443FF0D14DC5E920049B92E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0443FF0C14DC5E920049B92E /* CoreLocation.framework */; };
 		0443FF0F14DC5E9B0049B92E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0443FF0E14DC5E9B0049B92E /* QuartzCore.framework */; };
 		0443FF1114DC5EB80049B92E /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0443FF1014DC5EB80049B92E /* libsqlite3.dylib */; };
+		0448110114E03ED800BE617D /* marker-red.png in Resources */ = {isa = PBXBuildFile; fileRef = 044810FF14E03ED800BE617D /* marker-red.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		0443FF0C14DC5E920049B92E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		0443FF0E14DC5E9B0049B92E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		0443FF1014DC5EB80049B92E /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		044810FF14E03ED800BE617D /* marker-red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				0443074614DCBA130049B92E /* electoraldistricts.mbtiles */,
+				044810FF14E03ED800BE617D /* marker-red.png */,
 				0443074414DCBA040049B92E /* geography-class.plist */,
 				0443071F14DC6B1E0049B92E /* mapbox.geography-class.plist */,
 			);
@@ -263,6 +266,7 @@
 				0443072014DC6B1E0049B92E /* mapbox.geography-class.plist in Resources */,
 				0443074514DCBA040049B92E /* geography-class.plist in Resources */,
 				0443074714DCBA140049B92E /* electoraldistricts.mbtiles in Resources */,
+				0448110114E03ED800BE617D /* marker-red.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,6 +405,7 @@
 				0443FF0914DC5E390049B92E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,17 +7,41 @@
 //
 
 #import "IslandMapViewController.h"
-#import "RMMapView.h"
+#import "RMMarker.h"
+#import "RMProjection.h"
+#import "RMAnnotation.h"
+#import "RMQuadTree.h"
 #import "RMMBTilesTileSource.h"
 #import "RMTileStreamSource.h"
 
 @implementation IslandMapViewController
 {
     BOOL showsLocalTileSource;
+    CLLocationCoordinate2D center;
 }
 
 @synthesize mapView;
 
+- (void)addMarkers
+{
+    
+    CLLocationCoordinate2D markerPosition;
+        
+    UIImage *redMarkerImage = [UIImage imageNamed:@"marker-red.png"];
+
+    markerPosition.latitude = center.latitude;
+    markerPosition.longitude = center.longitude;
+        
+    NSLog(@"Add marker @ {%f,%f}", markerPosition.longitude, markerPosition.latitude);
+    
+    RMAnnotation *annotation = [RMAnnotation annotationWithMapView:self.mapView coordinate:markerPosition andTitle:[NSString stringWithFormat:@"Hello", markerPosition.longitude]];
+    
+    annotation.annotationIcon = redMarkerImage;
+    annotation.anchorPoint = CGPointMake(0.5, 1.0);
+                
+    [self.mapView addAnnotation:annotation];
+            
+}
 
 #pragma mark -
 #pragma mark View lifecycle
@@ -44,9 +68,8 @@
 	NSLog(@"viewDidLoad");
     [super viewDidLoad];
     
-	CLLocationCoordinate2D firstLocation;
-	firstLocation.latitude = 46.251795;
-	firstLocation.longitude = -63.126068;
+	center.latitude = 46.251795;
+	center.longitude = -63.126068;
     
     showsLocalTileSource = YES;
     
@@ -55,16 +78,18 @@
     
 	self.mapView = [[RMMapView alloc] initWithFrame:CGRectMake(0, 0, 1024, 748)
                                        andTilesource:tileSource
-                                    centerCoordinate:firstLocation
+                                    centerCoordinate:center
                                            zoomLevel:8
                                         maxZoomLevel:[tileSource maxZoom]
                                         minZoomLevel:[tileSource minZoom]
                                      backgroundImage:nil];
     
     self.mapView.backgroundColor = [UIColor blackColor];
+    self.mapView.delegate = self;
     
 	[self.view addSubview:mapView];
 	[self.view sendSubviewToBack:mapView];
+    [self performSelector:@selector(addMarkers) withObject:nil afterDelay:0.5];
 }
 
 - (void)dealloc
@@ -120,5 +145,24 @@
     
     self.mapView.tileSource = newTileSource;
 }
+
+#pragma mark -
+#pragma mark Delegate methods
+
+- (RMMapLayer *)mapView:(RMMapView *)mapView layerForAnnotation:(RMAnnotation *)annotation
+{
+    RMMarker *marker = nil;
+    
+    marker = [[RMMarker alloc] initWithUIImage:annotation.annotationIcon anchorPoint:annotation.anchorPoint];
+        
+    if (annotation.title)
+    {
+        marker.textForegroundColor = [UIColor blackColor];
+        [marker changeLabelUsingText:annotation.title];
+    }
+    
+    return marker;
+}
+
 
 @end

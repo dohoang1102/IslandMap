@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <Placemark>
+      <name>Lycopodium lucidulum</name>
+      <description>
+        <![CDATA[
+<table border="0" cellspacing="1" cellpadding="2">
+<tr>
+<td>
+<a href="http://vre2.upei.ca/herbarium/fedora/repository/herbarium:00001/-/Lycopodium lucidulum" target="_blank">
+<img src="http://vre2.upei.ca/herbarium/fedora/repository/herbarium:00001/TN/Thumbnail.jpg" alt="Lycopodium lucidulum"></a></td>
+<td>
+<p>Common Name: Shining Clubmoss </p>
+<p><a href="http://vre2.upei.ca/herbarium/fedora/repository/herbarium:00001/-/Lycopodium lucidulum" target="_blank">View the specimen.</a></p>
+<p>Collected in: St. Catherines</p>
+<p>Collected by: Diane Laughlin</p>
+<p>Date: 29/06/70 </p>
+</td>
+</tr>
+</table>          
+]]>
+      </description>
+      <Point>
+        <coordinates>-62.2000000,46.3666999</coordinates>
+      </Point>
+    </Placemark>
+
+
+    <Placemark>
+      <name>Lycopodium complanatum</name>
+      <description>
+        <![CDATA[
+<table border="0" cellspacing="1" cellpadding="2">
+<tr>
+<td>
+<a href="http://vre2.upei.ca/herbarium/fedora/repository/herbarium:00002/-/Lycopodium complanatum" target="_blank">
+<img src="http://vre2.upei.ca/herbarium/fedora/repository/herbarium:00002/TN/Thumbnail.jpg" alt="Lycopodium complanatum"></a></td>
+<td>
+<p>Common Name: Ground-Cedar </p>
+<p><a href="http://vre2.upei.ca/herbarium/fedora/repository/herbarium:00002/-/Lycopodium complanatum" target="_blank">View the specimen.</a></p>
+<p>Collected in: Tenmile House</p>
+<p>Collected by: Robert Pharoah</p>
+<p>Date: 10/10/76 </p>
+</td>
+</tr>
+</table>          
+]]>
+      </description>
+      <Point>
+        <coordinates>-62.9832999,46.3332999</coordinates>
+      </Point>
+    </Placemark>
+
+
+
+  </Document>
+</kml>

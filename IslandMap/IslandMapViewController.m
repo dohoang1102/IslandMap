@@ -13,6 +13,15 @@
 #import "RMQuadTree.h"
 #import "RMMBTilesTileSource.h"
 #import "RMTileStreamSource.h"
+#import "SimpleKML.h"
+#import "SimpleKMLContainer.h"
+#import "SimpleKMLDocument.h"
+#import "SimpleKMLFeature.h"
+#import "SimpleKMLPlacemark.h"
+#import "SimpleKMLPoint.h"
+#import "SimpleKMLPolygon.h"
+#import "SimpleKMLLinearRing.h"
+
 
 @implementation IslandMapViewController
 {
@@ -31,16 +40,41 @@
 
     markerPosition.latitude = center.latitude;
     markerPosition.longitude = center.longitude;
-        
-    NSLog(@"Add marker @ {%f,%f}", markerPosition.longitude, markerPosition.latitude);
+
+    SimpleKML *kml = [SimpleKML KMLWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"herbarium" ofType:@"kml"] error:NULL];    
     
-    RMAnnotation *annotation = [RMAnnotation annotationWithMapView:self.mapView coordinate:markerPosition andTitle:[NSString stringWithFormat:@"Hello", markerPosition.longitude]];
     
-    annotation.annotationIcon = redMarkerImage;
-    annotation.anchorPoint = CGPointMake(0.5, 1.0);
+    // look for a document feature in it per the KML spec
+    //
+    if (kml.feature && [kml.feature isKindOfClass:[SimpleKMLDocument class]])
+    {
+        // see if the document has features of its own
+        //
+        for (SimpleKMLFeature *feature in ((SimpleKMLContainer *)kml.feature).features)
+        {
+            // see if we have any placemark features with a point
+            //
+            if ([feature isKindOfClass:[SimpleKMLPlacemark class]] && ((SimpleKMLPlacemark *)feature).point)
+            {
+                SimpleKMLPoint *point = ((SimpleKMLPlacemark *)feature).point;
                 
-    [self.mapView addAnnotation:annotation];
-            
+                // create a normal point annotation for it
+                //
+
+                NSLog(@"Add marker @ {%f,%f}", point.coordinate.longitude, point.coordinate.latitude);
+                RMAnnotation *annotation = [RMAnnotation annotationWithMapView:self.mapView coordinate:point.coordinate andTitle:[NSString stringWithFormat:@"Hello", point.coordinate.longitude]];
+                
+                
+                annotation.coordinate = point.coordinate;
+                annotation.title      = feature.name;
+                annotation.annotationIcon = redMarkerImage;
+                annotation.anchorPoint = CGPointMake(0.5, 1.0);
+                
+                [self.mapView addAnnotation:annotation];
+ 
+            }
+        }
+    }
 }
 
 #pragma mark -
@@ -67,6 +101,7 @@
 {
 	NSLog(@"viewDidLoad");
     [super viewDidLoad];
+
     
 	center.latitude = 46.251795;
 	center.longitude = -63.126068;

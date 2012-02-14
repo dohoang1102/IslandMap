@@ -10,7 +10,6 @@
 		0443071B14DC66580049B92E /* libMapView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0443071514DC65D60049B92E /* libMapView.a */; };
 		0443072014DC6B1E0049B92E /* mapbox.geography-class.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0443071F14DC6B1E0049B92E /* mapbox.geography-class.plist */; };
 		0443074514DCBA040049B92E /* geography-class.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0443074414DCBA040049B92E /* geography-class.plist */; };
-		0443074714DCBA140049B92E /* electoraldistricts.mbtiles in Resources */ = {isa = PBXBuildFile; fileRef = 0443074614DCBA130049B92E /* electoraldistricts.mbtiles */; };
 		0443FEEE14DC5E390049B92E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0443FEED14DC5E390049B92E /* UIKit.framework */; };
 		0443FEF014DC5E390049B92E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0443FEEF14DC5E390049B92E /* Foundation.framework */; };
 		0443FEF214DC5E390049B92E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0443FEF114DC5E390049B92E /* CoreGraphics.framework */; };
@@ -51,11 +50,11 @@
 		0448130114E33E3200BE617D /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = 044812D714E33E3200BE617D /* mztools.c */; };
 		0448130214E33E3200BE617D /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 044812D914E33E3200BE617D /* unzip.c */; };
 		0448130314E33E3200BE617D /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 044812DB14E33E3200BE617D /* zip.c */; };
-		0448130414E33E3200BE617D /* FileInZipInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 044812DF14E33E3200BE617D /* FileInZipInfo.m */; };
+		0448130414E33E3200BE617D /* FileInZipInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 044812DF14E33E3200BE617D /* FileInZipInfo.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0448130514E33E3200BE617D /* ZipException.m in Sources */ = {isa = PBXBuildFile; fileRef = 044812E114E33E3200BE617D /* ZipException.m */; };
-		0448130614E33E3200BE617D /* ZipFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 044812E314E33E3200BE617D /* ZipFile.m */; };
-		0448130714E33E3200BE617D /* ZipReadStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 044812E514E33E3200BE617D /* ZipReadStream.m */; };
-		0448130814E33E3200BE617D /* ZipWriteStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 044812E714E33E3200BE617D /* ZipWriteStream.m */; };
+		0448130614E33E3200BE617D /* ZipFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 044812E314E33E3200BE617D /* ZipFile.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0448130714E33E3200BE617D /* ZipReadStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 044812E514E33E3200BE617D /* ZipReadStream.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0448130814E33E3200BE617D /* ZipWriteStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 044812E714E33E3200BE617D /* ZipWriteStream.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0448130914E33E3200BE617D /* adler32.c in Sources */ = {isa = PBXBuildFile; fileRef = 044812E914E33E3200BE617D /* adler32.c */; };
 		0448130A14E33E3200BE617D /* compress.c in Sources */ = {isa = PBXBuildFile; fileRef = 044812EA14E33E3200BE617D /* compress.c */; };
 		0448130B14E33E3200BE617D /* crc32.c in Sources */ = {isa = PBXBuildFile; fileRef = 044812EB14E33E3200BE617D /* crc32.c */; };
@@ -83,6 +82,8 @@
 		0448136D14E33EDF00BE617D /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0448135C14E33EDF00BE617D /* LICENSE.txt */; };
 		0448136E14E33EDF00BE617D /* CTidy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0448135F14E33EDF00BE617D /* CTidy.m */; };
 		0448137914E36F4500BE617D /* herbarium.kml in Resources */ = {isa = PBXBuildFile; fileRef = 0448137814E36F4500BE617D /* herbarium.kml */; };
+		0479AFE514E99DBF00646F8F /* pei.mbtiles in Resources */ = {isa = PBXBuildFile; fileRef = 0479AFE414E99DBF00646F8F /* pei.mbtiles */; };
+		04C9113414EAB3C700A8CD0D /* marker-blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 04C9113314EAB3C700A8CD0D /* marker-blue.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,7 +114,6 @@
 		0443070514DC65D50049B92E /* MapView.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MapView.xcodeproj; path = "Externals/alpstein-route-me/MapView/MapView.xcodeproj"; sourceTree = "<group>"; };
 		0443071F14DC6B1E0049B92E /* mapbox.geography-class.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "mapbox.geography-class.plist"; sourceTree = "<group>"; };
 		0443074414DCBA040049B92E /* geography-class.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "geography-class.plist"; sourceTree = "<group>"; };
-		0443074614DCBA130049B92E /* electoraldistricts.mbtiles */ = {isa = PBXFileReference; lastKnownFileType = file; path = electoraldistricts.mbtiles; sourceTree = "<group>"; };
 		0443FEE914DC5E390049B92E /* IslandMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IslandMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0443FEED14DC5E390049B92E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0443FEEF14DC5E390049B92E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -248,6 +248,9 @@
 		0448135F14E33EDF00BE617D /* CTidy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTidy.m; sourceTree = "<group>"; };
 		0448136014E33EDF00BE617D /* TouchXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchXML.h; sourceTree = "<group>"; };
 		0448137814E36F4500BE617D /* herbarium.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = herbarium.kml; sourceTree = "<group>"; };
+		0479AFE414E99DBF00646F8F /* pei.mbtiles */ = {isa = PBXFileReference; lastKnownFileType = file; path = pei.mbtiles; sourceTree = "<group>"; };
+		04C9113314EAB3C700A8CD0D /* marker-blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-blue.png"; sourceTree = "<group>"; };
+		04C9114714EAB54F00A8CD0D /* HexColorMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HexColorMacros.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -292,7 +295,8 @@
 		0443071C14DC6A620049B92E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				0443074614DCBA130049B92E /* electoraldistricts.mbtiles */,
+				0479AFE414E99DBF00646F8F /* pei.mbtiles */,
+				04C9113314EAB3C700A8CD0D /* marker-blue.png */,
 				044810FF14E03ED800BE617D /* marker-red.png */,
 				0443074414DCBA040049B92E /* geography-class.plist */,
 				0443071F14DC6B1E0049B92E /* mapbox.geography-class.plist */,
@@ -351,6 +355,7 @@
 				0443FF0314DC5E390049B92E /* IslandMapViewController.m */,
 				0448137814E36F4500BE617D /* herbarium.kml */,
 				0443FEF414DC5E390049B92E /* Supporting Files */,
+				04C9114714EAB54F00A8CD0D /* HexColorMacros.h */,
 			);
 			path = IslandMap;
 			sourceTree = "<group>";
@@ -622,10 +627,11 @@
 				0443FF0114DC5E390049B92E /* MainStoryboard.storyboard in Resources */,
 				0443072014DC6B1E0049B92E /* mapbox.geography-class.plist in Resources */,
 				0443074514DCBA040049B92E /* geography-class.plist in Resources */,
-				0443074714DCBA140049B92E /* electoraldistricts.mbtiles in Resources */,
 				0448110114E03ED800BE617D /* marker-red.png in Resources */,
 				0448136D14E33EDF00BE617D /* LICENSE.txt in Resources */,
 				0448137914E36F4500BE617D /* herbarium.kml in Resources */,
+				0479AFE514E99DBF00646F8F /* pei.mbtiles in Resources */,
+				04C9113414EAB3C700A8CD0D /* marker-blue.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,7 @@
 //
 
 #import "IslandMapViewController.h"
+#import "RMMapView.h"
 #import "RMMarker.h"
 #import "RMProjection.h"
 #import "RMAnnotation.h"
@@ -19,9 +20,8 @@
 #import "SimpleKMLFeature.h"
 #import "SimpleKMLPlacemark.h"
 #import "SimpleKMLPoint.h"
-#import "SimpleKMLPolygon.h"
 #import "SimpleKMLLinearRing.h"
-
+#import "HexColorMacros.h"
 
 @implementation IslandMapViewController
 {
@@ -31,9 +31,10 @@
 
 @synthesize mapView;
 
+
 - (void)addMarkers
 {
-    
+
     CLLocationCoordinate2D markerPosition;
         
     UIImage *redMarkerImage = [UIImage imageNamed:@"marker-red.png"];
@@ -69,8 +70,7 @@
                 annotation.title      = feature.name;
                 annotation.annotationIcon = redMarkerImage;
                 annotation.anchorPoint = CGPointMake(0.5, 1.0);
-                
-                [self.mapView addAnnotation:annotation];
+                [mapView addAnnotation:annotation];
  
             }
         }
@@ -89,11 +89,7 @@
 }
 
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Release any cached data, images, etc that aren't in use.
-}
+
 
 #pragma mark - View lifecycle
 
@@ -102,13 +98,12 @@
 	NSLog(@"viewDidLoad");
     [super viewDidLoad];
 
-    
 	center.latitude = 46.251795;
 	center.longitude = -63.126068;
     
     showsLocalTileSource = YES;
     
-    NSURL *tilesURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"electoraldistricts" ofType:@"mbtiles"]];
+    NSURL *tilesURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"pei" ofType:@"mbtiles"]];
     RMMBTilesTileSource *tileSource = [[RMMBTilesTileSource alloc] initWithTileSetURL:tilesURL];
     
 	self.mapView = [[RMMapView alloc] initWithFrame:CGRectMake(0, 0, 1024, 748)
@@ -119,34 +114,24 @@
                                         minZoomLevel:[tileSource minZoom]
                                      backgroundImage:nil];
     
-    self.mapView.backgroundColor = [UIColor blackColor];
+    self.mapView.backgroundColor = UIColorFromRGBWithAlpha(0xEEEEEE, 1);
     self.mapView.delegate = self;
-    
+    self.mapView.enableClustering = YES;
 	[self.view addSubview:mapView];
 	[self.view sendSubviewToBack:mapView];
     [self performSelector:@selector(addMarkers) withObject:nil afterDelay:0.5];
 }
 
-- (void)dealloc
-{
-    [self.mapView removeFromSuperview];
-}
 
-- (void)viewDidUnload
+- (void)didReceiveMemoryWarning
 {
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+    [super didReceiveMemoryWarning];
+    // Release any cached data, images, etc that aren't in use.
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -158,6 +143,26 @@
 {
 	[super viewDidDisappear:animated];
 }
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+}
+
+- (void)viewDidUnload
+{
+    [super viewDidUnload];
+    // Release any retained subviews of the main view.
+    // e.g. self.myOutlet = nil;
+}
+
+- (void)dealloc
+{
+    [self.mapView removeFromSuperview];
+}
+
+
+
 
 - (IBAction)swtichTilesource:(id)sender
 {
@@ -174,30 +179,47 @@
     {
         showsLocalTileSource = YES;
         
-        NSURL *tilesURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"electoraldistricts" ofType:@"mbtiles"]];
+        NSURL *tilesURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"pei" ofType:@"mbtiles"]];
         newTileSource = [[RMMBTilesTileSource alloc] initWithTileSetURL:tilesURL];
     }
     
     self.mapView.tileSource = newTileSource;
 }
 
+
+
 #pragma mark -
 #pragma mark Delegate methods
 
-- (RMMapLayer *)mapView:(RMMapView *)mapView layerForAnnotation:(RMAnnotation *)annotation
+
+- (void)tapOnAnnotation:(RMAnnotation *)annotation onMap:(RMMapView *)map 
 {
-    RMMarker *marker = nil;
-    
-    marker = [[RMMarker alloc] initWithUIImage:annotation.annotationIcon anchorPoint:annotation.anchorPoint];
-        
-    if (annotation.title)
+    if ([annotation.annotationType isEqualToString:kRMClusterAnnotationTypeName]) 
     {
-        marker.textForegroundColor = [UIColor blackColor];
-        [marker changeLabelUsingText:annotation.title];
+        [map zoomInToNextNativeZoomAt:[map coordinateToPixel:annotation.coordinate] animated:YES];
+    }
+}
+
+- (RMMapLayer *)mapView:(RMMapView *)aMapView layerForAnnotation:(RMAnnotation *)annotation
+{
+    RMMapLayer *marker = nil;
+    
+    if ([annotation.annotationType isEqualToString:kRMClusterAnnotationTypeName])
+    {
+        marker = [[RMMarker alloc] initWithUIImage:[UIImage imageNamed:@"marker-blue.png"] anchorPoint:annotation.anchorPoint];
+        if (annotation.title)
+            [(RMMarker *)marker changeLabelUsingText:annotation.title];
+    }
+    else
+    {
+        marker = [[RMMarker alloc] initWithUIImage:annotation.annotationIcon anchorPoint:annotation.anchorPoint];
+        if (annotation.title)
+            [(RMMarker *)marker changeLabelUsingText:annotation.title];
     }
     
     return marker;
 }
+
 
 
 @end

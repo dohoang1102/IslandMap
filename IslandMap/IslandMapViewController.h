@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
 #import "RMMapView.h"
 
 @interface IslandMapViewController : UIViewController <RMMapViewDelegate>
+{
+	IBOutlet RMMapView *mapView;
+}
 
 @property(nonatomic,strong)RMMapView *mapView;
 

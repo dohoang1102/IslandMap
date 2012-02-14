@@ -36,14 +36,18 @@
 {
 
     CLLocationCoordinate2D markerPosition;
-        
+
     UIImage *redMarkerImage = [UIImage imageNamed:@"marker-red.png"];
 
     markerPosition.latitude = center.latitude;
     markerPosition.longitude = center.longitude;
 
-    SimpleKML *kml = [SimpleKML KMLWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"herbarium" ofType:@"kml"] error:NULL];    
-    
+    SimpleKML *kml = [SimpleKML KMLWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"herbarium" ofType:@"kml"] error:NULL];
+
+    NSMutableArray *markersToAdd = [NSMutableArray array];
+
+    NSLog(@"Loading KML");
+
     // look for a document feature in it per the KML spec
     //
     if (kml.feature && [kml.feature isKindOfClass:[SimpleKMLDocument class]])
@@ -57,23 +61,29 @@
             if ([feature isKindOfClass:[SimpleKMLPlacemark class]] && ((SimpleKMLPlacemark *)feature).point)
             {
                 SimpleKMLPoint *point = ((SimpleKMLPlacemark *)feature).point;
-                
+
                 // create a normal point annotation for it
                 //
 
-                NSLog(@"Add marker @ {%f,%f}", point.coordinate.longitude, point.coordinate.latitude);
+//                NSLog(@"Add marker @ {%f,%f}", point.coordinate.longitude, point.coordinate.latitude);
                 RMAnnotation *annotation = [RMAnnotation annotationWithMapView:self.mapView coordinate:point.coordinate andTitle:[NSString stringWithFormat:@"Hello", point.coordinate.longitude]];
-                
-                
+
+
                 annotation.coordinate = point.coordinate;
                 annotation.title      = feature.name;
                 annotation.annotationIcon = redMarkerImage;
                 annotation.anchorPoint = CGPointMake(0.5, 1.0);
-                [mapView addAnnotation:annotation];
- 
+
+                [markersToAdd addObject:annotation];
             }
         }
     }
+
+    NSLog(@"Adding markers");
+
+    [mapView addAnnotations:markersToAdd];
+
+    NSLog(@"done");
 }
 
 #pragma mark -
@@ -83,7 +93,7 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationLandscapeLeft) || 
+    return (interfaceOrientation == UIInterfaceOrientationLandscapeLeft) ||
     (interfaceOrientation == UIInterfaceOrientationLandscapeRight);
 }
 
@@ -99,12 +109,12 @@
 
 	center.latitude = 46.251795;
 	center.longitude = -63.126068;
-    
+
     showsLocalTileSource = YES;
-    
+
     NSURL *tilesURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"pei" ofType:@"mbtiles"]];
     RMMBTilesTileSource *tileSource = [[RMMBTilesTileSource alloc] initWithTileSetURL:tilesURL];
-    
+
 	self.mapView = [[RMMapView alloc] initWithFrame:CGRectMake(0, 0, 1024, 748)
                                        andTilesource:tileSource
                                     centerCoordinate:center
@@ -112,7 +122,7 @@
                                         maxZoomLevel:[tileSource maxZoom]
                                         minZoomLevel:[tileSource minZoom]
                                      backgroundImage:nil];
-    
+
     self.mapView.backgroundColor = UIColorFromRGBWithAlpha(0xEEEEEE, 1);
     self.mapView.delegate = self;
     self.mapView.enableClustering = YES;
@@ -166,22 +176,22 @@
 - (IBAction)swtichTilesource:(id)sender
 {
     id <RMTileSource> newTileSource = nil;
-    
+
     if (showsLocalTileSource)
     {
         showsLocalTileSource = NO;
-        
+
         NSDictionary *info = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"geography-class" ofType:@"plist"]];
         newTileSource = [[RMTileStreamSource alloc] initWithInfo:info];
     }
     else
     {
         showsLocalTileSource = YES;
-        
+
         NSURL *tilesURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"pei" ofType:@"mbtiles"]];
         newTileSource = [[RMMBTilesTileSource alloc] initWithTileSetURL:tilesURL];
     }
-    
+
     self.mapView.tileSource = newTileSource;
 }
 
@@ -191,9 +201,9 @@
 #pragma mark Delegate methods
 
 
-- (void)tapOnAnnotation:(RMAnnotation *)annotation onMap:(RMMapView *)map 
+- (void)tapOnAnnotation:(RMAnnotation *)annotation onMap:(RMMapView *)map
 {
-    if ([annotation.annotationType isEqualToString:kRMClusterAnnotationTypeName]) 
+    if ([annotation.annotationType isEqualToString:kRMClusterAnnotationTypeName])
     {
         [map zoomInToNextNativeZoomAt:[map coordinateToPixel:annotation.coordinate] animated:YES];
     }
@@ -202,7 +212,7 @@
 - (RMMapLayer *)mapView:(RMMapView *)aMapView layerForAnnotation:(RMAnnotation *)annotation
 {
     RMMapLayer *marker = nil;
-    
+
     if ([annotation.annotationType isEqualToString:kRMClusterAnnotationTypeName])
     {
         marker = [[RMMarker alloc] initWithUIImage:[UIImage imageNamed:@"marker-blue.png"] anchorPoint:annotation.anchorPoint];
@@ -215,7 +225,7 @@
         if (annotation.title)
             [(RMMarker *)marker changeLabelUsingText:annotation.title];
     }
-    
+
     return marker;
 }
 

@@ -7,4 +7,4 @@ Download the repo:
 
 Then, update the submodules:
 
-      git submodule update --init
+      git submodule update --init --recursive

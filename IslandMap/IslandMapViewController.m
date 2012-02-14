@@ -44,7 +44,6 @@
 
     SimpleKML *kml = [SimpleKML KMLWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"herbarium" ofType:@"kml"] error:NULL];    
     
-    
     // look for a document feature in it per the KML spec
     //
     if (kml.feature && [kml.feature isKindOfClass:[SimpleKMLDocument class]])

@@ -247,7 +247,7 @@
 		0448135E14E33EDF00BE617D /* CTidy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTidy.h; sourceTree = "<group>"; };
 		0448135F14E33EDF00BE617D /* CTidy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTidy.m; sourceTree = "<group>"; };
 		0448136014E33EDF00BE617D /* TouchXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchXML.h; sourceTree = "<group>"; };
-		0448137814E36F4500BE617D /* herbarium.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = herbarium.kml; sourceTree = "<group>"; };
+		0448137814E36F4500BE617D /* herbarium.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = herbarium.kml; path = IslandMap/herbarium.kml; sourceTree = "<group>"; };
 		0479AFE414E99DBF00646F8F /* pei.mbtiles */ = {isa = PBXFileReference; lastKnownFileType = file; path = pei.mbtiles; sourceTree = "<group>"; };
 		04C9113314EAB3C700A8CD0D /* marker-blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-blue.png"; sourceTree = "<group>"; };
 		04C9114714EAB54F00A8CD0D /* HexColorMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HexColorMacros.h; sourceTree = "<group>"; };
@@ -295,6 +295,9 @@
 		0443071C14DC6A620049B92E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0443FEF414DC5E390049B92E /* Supporting Files */,
+				0443FEFF14DC5E390049B92E /* MainStoryboard.storyboard */,
+				0448137814E36F4500BE617D /* herbarium.kml */,
 				0479AFE414E99DBF00646F8F /* pei.mbtiles */,
 				04C9113314EAB3C700A8CD0D /* marker-blue.png */,
 				044810FF14E03ED800BE617D /* marker-red.png */,
@@ -315,9 +318,9 @@
 		0443FEDE14DC5E390049B92E = {
 			isa = PBXGroup;
 			children = (
+				046DB92514EAC3CB00EDD338 /* Classes */,
 				0443071C14DC6A620049B92E /* Resources */,
 				0443032714DC653C0049B92E /* Externals */,
-				0443FEF314DC5E390049B92E /* IslandMap */,
 				0443FEEC14DC5E390049B92E /* Frameworks */,
 				0443FEEA14DC5E390049B92E /* Products */,
 			);
@@ -345,21 +348,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		0443FEF314DC5E390049B92E /* IslandMap */ = {
-			isa = PBXGroup;
-			children = (
-				0443FEFC14DC5E390049B92E /* IslandMapAppDelegate.h */,
-				0443FEFD14DC5E390049B92E /* IslandMapAppDelegate.m */,
-				0443FEFF14DC5E390049B92E /* MainStoryboard.storyboard */,
-				0443FF0214DC5E390049B92E /* IslandMapViewController.h */,
-				0443FF0314DC5E390049B92E /* IslandMapViewController.m */,
-				0448137814E36F4500BE617D /* herbarium.kml */,
-				0443FEF414DC5E390049B92E /* Supporting Files */,
-				04C9114714EAB54F00A8CD0D /* HexColorMacros.h */,
-			);
-			path = IslandMap;
-			sourceTree = "<group>";
-		};
 		0443FEF414DC5E390049B92E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -369,6 +357,7 @@
 				0443FEFB14DC5E390049B92E /* IslandMap-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			path = IslandMap;
 			sourceTree = "<group>";
 		};
 		0448128B14E33DFE00BE617D /* Simple-KML */ = {
@@ -547,6 +536,19 @@
 				0448135F14E33EDF00BE617D /* CTidy.m */,
 			);
 			path = Tidy;
+			sourceTree = "<group>";
+		};
+		046DB92514EAC3CB00EDD338 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				04C9114714EAB54F00A8CD0D /* HexColorMacros.h */,
+				0443FEFC14DC5E390049B92E /* IslandMapAppDelegate.h */,
+				0443FEFD14DC5E390049B92E /* IslandMapAppDelegate.m */,
+				0443FF0214DC5E390049B92E /* IslandMapViewController.h */,
+				0443FF0314DC5E390049B92E /* IslandMapViewController.m */,
+			);
+			name = Classes;
+			path = IslandMap;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -730,6 +732,7 @@
 				0443FF0014DC5E390049B92E /* en */,
 			);
 			name = MainStoryboard.storyboard;
+			path = IslandMap;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

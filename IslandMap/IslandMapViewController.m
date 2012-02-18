@@ -125,10 +125,11 @@
 
     self.mapView.backgroundColor = UIColorFromRGBWithAlpha(0xEEEEEE, 1);
     self.mapView.delegate = self;
+    self.mapView.positionClusterMarkersAtTheGravityCenter = NO;
     self.mapView.enableClustering = YES;
 	[self.view addSubview:mapView];
 	[self.view sendSubviewToBack:mapView];
-    [self performSelector:@selector(addMarkers) withObject:nil afterDelay:0.5];
+    [self performSelector:@selector(addMarkers) withObject:nil afterDelay:0.1];
 }
 
 
